@@ -86,7 +86,28 @@ namespace AddressBookProblem
                             break;
                     }
                 }
+                else
+                {
+                    Console.WriteLine("The contact is not found");
+                }
             }
+        }
+        public void DeleteContact(string name)
+        {
+            Contact deleteContact = new Contact();
+            foreach (var contact in contactList.ToList())
+            {
+                if (contact.FirstName.Equals(name))
+                {
+                    deleteContact = contact;
+                }
+                contactList.Remove(deleteContact);
+            }
+            Console.WriteLine("The contact is deleted successfully");
         }
     }
 }
+           
+        
+    
+
